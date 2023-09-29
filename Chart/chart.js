@@ -9,6 +9,8 @@ form.addEventListener("submit", function (event) {
   // Get the values of the latitude and longitude inputs
   let lat = document.getElementById("latitude").value;
   let lon = document.getElementById("longitude").value;
+  let timeStart = document.getElementById("timeStart").value;
+  let timeEnd = document.getElementById("timeEnd").value;
 
   // Construct the URL of the API with the latitude and longitude parameters
   let url =
@@ -16,7 +18,11 @@ form.addEventListener("submit", function (event) {
     lat +
     "&longitude=" +
     lon +
-    "&start_date=2023-08-17&end_date=2023-08-31&hourly=temperature_2m,windspeed_10m";
+    "&start_date=" +
+    timeStart +
+    "&end_date=" +
+    timeEnd +
+    "&hourly=temperature_2m,windspeed_10m";
   // The rest of the code is the same as before
   console.log(url);
   fetch(url)
